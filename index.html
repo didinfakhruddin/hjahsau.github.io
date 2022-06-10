@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: white;
+        width: 100vw;
+        height: 100vh;
+      }
+      #ucapan {
+        position: absolute;
+      }
+      #mau {
+        margin-right: 10px;
+      }
+      #nggak {
+        position: absolute;
+      }
+      #card_gambar {
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+      }
+      #gambar {
+        width: 370px;
+      }
+    </style>
+    <title>tembak pacar</title>
+  </head>
+  <body>
+    <div id="ucapan">
+      <h1>mau nggk kamu jadi psatir</h1>
+      <button id="mau" onclick="gambarMuncul()">mau</button>
+
+      <button id="nggak" onclick="pindah(this)">nggak</button>
+    </div>
+    <div id="card_gambar">
+      <img id="gambar" onclick="gambarHilang()" src="meme.jpg" alt="gambar1" />
+    </div>
+    <script>
+      function pindah(element) {
+        let pindahTempat = Math.floor(Math.random() * (300 - 10)) + 10;
+        element.style.marginTop = `${pindahTempat}px`;
+        element.style.marginLeft = `${pindahTempat}px`;
+      }
+      function gambarMuncul() {
+        ucapan.style.filter = 'blur(8px)';
+        card_gambar.style.display = 'flex';
+      }
+      function gambarHilang() {
+        ucapan.style.filter = 'none';
+        card_gambar.style.display = 'none';
+      }
+      console.log(pindah());
+    </script>
+  </body>
+</html>
